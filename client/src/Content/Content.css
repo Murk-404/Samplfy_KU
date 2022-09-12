@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'spotify';
+	src: url('../font/GothamBook.ttf');
+}
+.container-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  position: relative;
+  /* border: 2px solid #1DB954; */
+}
+/* .row {
+  position: absolute;
+} */
+#text {
+  position: absolute;
+  height: 60%;
+  margin: auto;
+  color: #ebebeb;
+  font-family: 'spotify';
+  font-size: 5em;
+  font-weight: lighter;
+  text-align: center;
+}
+#button {
+  position: absolute;
+  top: 50%;
+  margin: auto;
+  width: 50%;
+}

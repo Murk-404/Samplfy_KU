@@ -1,11 +1,16 @@
-// import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
-import Login from './Login';
+import { useEffect } from 'react'
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container } from 'react-bootstrap'
+import Header from './Header/Header.js'
+import Content from './Content/Content.js';
 
-function App() {
+
+export default function App() {
   return (
-    <Login />
-  );
+    <div className="bg-image">
+      <Header />
+      <Content />
+    </div>
+  )
 }
-
-export default App;
