@@ -1,7 +1,7 @@
 import React from 'react'
 // import './App.css';
 // import { Container } from 'react'
-import logo from '/Spotify_React_Project/client/src/images/samplfy-logo-new.png'
+import logo from '..\\src\\images\\samplfy-logo-new.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';

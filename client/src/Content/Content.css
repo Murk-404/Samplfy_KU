@@ -6,7 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 55vw;
+  max-height: 85vh;
   position: relative;
   /* border: 2px solid #1DB954; */
 }
@@ -15,11 +16,11 @@
 } */
 #text {
   position: absolute;
-  height: 60%;
+  height: 35vw;
   margin: auto;
   color: #ebebeb;
   font-family: 'spotify';
-  font-size: 5em;
+  font-size: 4vw;
   font-weight: lighter;
   text-align: center;
 }
@@ -28,4 +29,7 @@
   top: 50%;
   margin: auto;
   width: 50%;
+}
+#welcome {
+  font-size: 6vw;
 }
