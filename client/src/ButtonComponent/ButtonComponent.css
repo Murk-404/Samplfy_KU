@@ -22,4 +22,14 @@ button:hover {
   color: rgb(29, 185, 84, 0.7);
   /* background-opacity: 30%; */
 }
+a.login-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 

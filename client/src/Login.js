@@ -1,8 +1,5 @@
 import React from 'react'
-import './ButtonComponent.css'
-// import { Link } from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import { Button } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 const CLIENT_ID = "53c0537d418540e08a9f37fa33e35052";
 const REDIRECT_URI = "http://localhost:3000"
@@ -34,19 +31,11 @@ SCOPES_ARR.forEach(function (key) {
 SCOPES = SCOPES.slice(0, SCOPES.length-3);
 
 const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=" + CLIENT_ID + "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=" + SCOPES;
-
-// console.log(AUTH_URL);
-const code = new URLSearchParams(window.location.search).get('code');
-
-export default function ButtonComponent() {
+export default function Login() {
   return (
-    // <Button variant="outline-dark" size='lg'>Get Started</Button>
-    // <Button >Get Started</Button>
-    // <a href={AUTH_URL}>
-      // <button onClick={window.location.href={AUTH_URL}}>Get Started</button>
-      <a className="login-link" href={AUTH_URL} onClick={ console.log(code) }><button>Get Started</button></a>
-
-    // </a>
-
+    <Container className="d-flex justify-content-center align-items-center"
+    style={{ minHeight: "100vh" }}>
+      <a className="btn btn-success btn-lg" href={AUTH_URL}>Login with Spotify</a>
+    </Container>
   )
 }
