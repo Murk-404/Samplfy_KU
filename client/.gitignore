@@ -13,8 +13,7 @@
 /build
 /server
 /copy
-/Credentials
-.Credentials.js
+/src/Credentials
 
 # misc
 .DS_Store
