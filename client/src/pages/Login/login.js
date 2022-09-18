@@ -1,8 +1,7 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
 
 const CLIENT_ID = "53c0537d418540e08a9f37fa33e35052";
-const REDIRECT_URI = "http://localhost:3000"
+const REDIRECT_URI = "http://localhost:3000/login"
 
 var SCOPES = "";
 const SCOPES_ARR = ["ugc-image-upload",
@@ -31,11 +30,20 @@ SCOPES_ARR.forEach(function (key) {
 SCOPES = SCOPES.slice(0, SCOPES.length-3);
 
 const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=" + CLIENT_ID + "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=" + SCOPES;
-export default function Login() {
+
+const code = new URLSearchParams(window.location.search).get('code');
+// console.log(AUTH_URL);
+// const code = new URLSearchParams(window.location.search).get('code');
+
+const Login = () => {
   return (
-    <Container className="d-flex justify-content-center align-items-center"
-    style={{ minHeight: "100vh" }}>
-      <a className="btn btn-success btn-lg" href={AUTH_URL}>Login with Spotify</a>
-    </Container>
-  )
-}
+    <div id='container'>
+      <div id='text'>
+        {/* {code} */}
+        code
+      </div>
+    </div>
+  );
+};
+  
+export default Login;

@@ -2,30 +2,51 @@
 	font-family: 'spotify';
 	src: url('../font/GothamBook.ttf');
 }
-button {
+/* button {
   font-family: 'spotify';
   font-size: 5vw;
   font-weight: bold;
   background-color: transparent;
-  /* max-height: 10vw; */
-  /* width: 100%; */
-  /* width: 70vw; */
+
   color: rgb(255, 255, 255, 0.5);
   border: 7px solid #1DB954;
   border-radius: 40px;
   transition: all 0.2s ease;
-  /* padding: 100px 20px; */
 }
 button:hover {
   background: rgba(0,0,0,.3);
   border: 7px solid white;
   color: rgb(29, 185, 84, 0.7);
-  /* background-opacity: 30%; */
 }
 a.login-link{
   display: flex;
   align-items: center;
   justify-content: center;
+} */
+#button_text {
+  font-family: 'spotify';
+  font-size: 5vw;
+  text-align: center;
+  font-weight: bold;
+  background-color: transparent;
+  color: rgb(255, 255, 255, 0.5);
+  border: 7px solid #1DB954;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+#button_text:hover {
+  background: rgba(0,0,0,.3);
+  border: 7px solid white;
+  color: rgb(29, 185, 84, 0.7);
+}
+
+#button {
+  position: absolute;
+  top: 50%;
+  margin: auto;
+  width: 50%;
 }
 /* a {
   display: flex;

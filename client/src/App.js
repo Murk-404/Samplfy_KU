@@ -1,16 +1,23 @@
-import { useEffect } from 'react'
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container } from 'react-bootstrap'
-import Header from './Header/Header.js'
-import Content from './Content/Content.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Header/Header.js';
+import Main from './Main';
+import React, { useState, useEffect } from 'react'
 
+class App extends React.Component {
 
-export default function App() {
-  return (
-    <div className="bg-image">
-      <Header />
-      <Content />
-    </div>
-  )
+  constructor(props){
+    super(props);
+
+  }
+  render() {
+    return (
+      <div className="bg-image">
+        <Header />
+        <Main />
+      </div>
+    )
+  }
 }
+
+export default App;

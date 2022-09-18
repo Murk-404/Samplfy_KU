@@ -12,6 +12,9 @@
 # production
 /build
 /server
+/copy
+/Credentials
+.Credentials.js
 
 # misc
 .DS_Store
