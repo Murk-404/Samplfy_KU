@@ -3,7 +3,7 @@
 	src: url('../../font/GothamBook.ttf');
 }
 
-#container {
+/* #container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,4 +22,4 @@
     font-size: 4vw;
     font-weight: lighter;
     text-align: center;
-}
+} */
