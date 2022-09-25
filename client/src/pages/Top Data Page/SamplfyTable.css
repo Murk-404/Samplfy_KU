@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'spotify';
+	src: url('../../font/GothamBook.ttf');
+}
+
+.TableCell {
+  font-size: '20px',
+}

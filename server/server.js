@@ -9,7 +9,9 @@ app.get('/api', (req, res) => {
   const child = spawner('python', ['C:/Spotify_React_Project/server/spot_auth.py']);
   child.stdout.on('data', (data) => {
     console.log(`This is the data: ${data}`)
-    res.json(`{ "user": ["${data}"] }`)
+    // res.json(`{ "user": ["${data}"] }`)
+    res.json(`${data}`)
+
   });
   child.stderr.on('data', (data) => {
     console.log(`stderr: ${data}`);
