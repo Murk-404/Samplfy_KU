@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/server/node_modules
+/client/node_modules
+
 /.pnp
 .pnp.js
 
@@ -16,8 +19,12 @@
 /src/Credentials
 
 # misc
+.cache
 ./env.py
 /env.py
+server/env.py
+/server/env.py
+.json
 env.py
 .env.py
 .DS_Store
