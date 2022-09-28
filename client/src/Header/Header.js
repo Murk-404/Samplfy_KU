@@ -39,15 +39,36 @@ import logo from '..\\src\\images\\samplfy-logo-new.png'
 //   )
 // }
 
+function sendRequest() {
+  // window.location.replace('http://localhost:3000/top-data')
+  fetch('/api').then(
+    
+    response => response.json()
+    
+  ).then(
+    data => {
+      data = data.slice(0, -2)
+      // setBackendData(data)
+      // localStorage.setItem('type', typeof(data))
+      localStorage.setItem('username', data)
+      sessionStorage.setItem('loggedIn', true)
+      // console.log(backendData)
+    }
+  )
+  
+}
+
 export default function Header() {
   return (
     <div id='nav_bar'>
       <NavLink to='/'> <img src={logo} alt="Samplfy" id='logo'/> </NavLink>
-      <div class='nav_button_divider'></div>
+      {/* <div class='nav_button_divider'></div> */}
       <NavLink to='/features' style={{textDecoration: 'none', height:'30%'}}> <span class='nav_text'>Features</span> </NavLink>
-      <div class='nav_button_divider'></div>
       <NavLink to='/about' style={{textDecoration: 'none', height:'30%'}}> <span class='nav_text'>About</span> </NavLink>
-      <div class='nav_button_divider'></div>
+      {(sessionStorage.getItem("loggedIn") == false || !sessionStorage.getItem("loggedIn"))
+      ? <NavLink id='login' to='/top-data' onClick={ sendRequest } style={{ textDecoration: 'none', height: '30%' }}> <span class='login' id='login' >Top Tracks</span> </NavLink>
+      : <NavLink to='/top-data' style={{ textDecoration: 'none', height:'30%', color: '#808080' }}> <span class='nav_text'>Top Tracks</span> </NavLink>
+      }
     </div>
   )
 }

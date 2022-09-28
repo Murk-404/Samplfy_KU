@@ -16,14 +16,14 @@ import { ref, onValue } from 'firebase/database'
 
 const theme = createTheme({
   palette: {
-    mode: "light",
-    background: {
-      paper: '#FFFFFF'
-    }
+    mode: "dark",
+    // background: {
+    //   paper: '#FFFFFF'
+    // }
   },
   typography: {
     htmlFontSize: 12,
-    fontWeightBold: "800",
+    fontWeightBold: "600",
     fontFamily: "Arial",
   },
   
@@ -34,43 +34,47 @@ export class SamplfyTable extends React.Component {
   
   constructor(){
     super();
-    this.state = {
-      tableData: [],
-      loading: false
-    }
+    // this.state = {
+    //   newData: [],
+    //   // loading: false
+    // }
     // const [index, setIndex] = useState(0);
   }
   
-  componentDidMount(){
-    var ls = (localStorage.getItem('username'))
-    // const dbRef = ref(db, `${ls}`)
-    const dbRef = ref(db, `fullmtyl`)
-    console.log(this.props.index)
+  // componentDidMount(){
+  //   var ls = (localStorage.getItem('username'))
+  //   // const dbRef = ref(db, `${ls}`)
+  //   const dbRef = ref(db, `fullmtyl`)
+  //   console.log(this.props.index)
 
-    // console.log(typeof(ls))
-    onValue(dbRef, (snapshot)=>{
-      let records = [];
-      snapshot.forEach(childSnapshot => {
-        // console.log(childSnapshot)
-        let keyName = childSnapshot.key;
-        // console.log(keyName)
-        let data = childSnapshot.val();
-        if(keyName != 'user-token')
-          records.push({"key": keyName, "data": data})
-      })
-      this.setState({tableData: records[this.props.index].data.items})
-      this.setState({loading: true})
-    })
-  }
-
+  //   // console.log(typeof(ls))
+  //   onValue(dbRef, (snapshot)=>{
+  //     let records = [];
+  //     snapshot.forEach(childSnapshot => {
+  //       // console.log(childSnapshot)
+  //       let keyName = childSnapshot.key;
+  //       // console.log(keyName)
+  //       let data = childSnapshot.val();
+  //       if(keyName != 'user-token')
+  //         records.push({"key": keyName, "data": data})
+  //     })
+  //     this.setState({tableData: records[this.props.index].data.items})
+  //     this.setState({loading: true})
+  //   })
+  // }
+  // componentDidMount(){
+  //   if(this.props.loading){
+  //     this.setState({newData: this.props.tableData})
+  //   }
+  // }
   render() {
+    // console.log(this.props.tableData)
+    // console.log(this.state.newData)
+
     return (
-      
       <ThemeProvider theme={theme}>
-        {/* <button onClick={this.setState({index: this.state.index + 1})}>Click</button> */}
-        {!this.state.loading 
-        ? <div style={{paddingTop:'25vh'}}><Bars type="ThreeDots" color="#2BAD60" height="200" width="100%"/></div>
-        : <TableContainer component={ Paper } sx={{ 
+        
+        <TableContainer component={ Paper } sx={{ 
           maxHeight: '70vh', 
           maxWidth: '80vw', 
           '&::-webkit-scrollbar': {
@@ -95,19 +99,19 @@ export class SamplfyTable extends React.Component {
             </TableHead>
             <TableBody>
             {
-              this.state.tableData.map((row,index) => {
+              this.props.tableData.map((row,index) => {
                 return(
                   <TableRow 
                     // onClick={() =>  window.open(row.external_urls.spotify, '_blank')}
                   >
                     <TableCell>{index + 1}</TableCell>
-                    <TableCell><img src={row.album.images[2].url}></img></TableCell>
+                    <TableCell><img className='img' src={row.album.images[2].url}></img></TableCell>
                     <TableCell 
-                      sx={{ cursor: 'pointer', fontWeight: 'bold' }} 
+                      sx={{ cursor: 'pointer', fontWeight: 'bold', width: '50%' }} 
                       onClick={() =>  window.open(row.external_urls.spotify, '_blank')}
                     >{row.name}</TableCell>
                     <TableCell 
-                      sx={{ cursor: 'pointer', fontWeight: 'bold' }} 
+                      sx={{ cursor: 'pointer', fontWeight: 'bold', width: '30%' }} 
                       onClick={() =>  window.open(row.artists[0].external_urls.spotify, '_blank')}
                     >{row.artists[0].name}</TableCell>
 
@@ -118,7 +122,7 @@ export class SamplfyTable extends React.Component {
             </TableBody>
             
           </Table>
-        </TableContainer>}
+        </TableContainer>
       </ThemeProvider>
     )
   }

@@ -31,7 +31,7 @@ a.login-link{
   background-color: transparent;
   color: rgb(255, 255, 255, 0.5);
   border: 7px solid #1DB954;
-  border-radius: 40px;
+  border-radius: 90px;
   transition: all 0.2s ease;
   text-decoration: none;
 }

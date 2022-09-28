@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom'
 import './Content.css'
 import React, { useState, useEffect } from 'react';
-import ButtonComponent from '../ButtonComponent/ButtonComponent';
+import LoginButton from '../ButtonComponent/LoginButton';
+import LogoutButton from '../ButtonComponent/LogoutButton';
 // function fireTest() {
 //   const [customerName, setCustomerName] = useState("");
 //   const [customerPassword, setCustomerPassword] = useState("");
@@ -55,18 +56,22 @@ function Content() {
   //     window.localStorage.removeItem("token")
   // }
   // const code = new URLSearchParams(window.location.search).get('code');
-
   return (
     <div className="container-container">
-      <div className="row" id="text">
-        <p> <span id="welcome"> Samplfy </span> <br/>Please click below to start using Samplfy</p>
-      </div>
-      <ButtonComponent></ButtonComponent>
-      {/* <div className="row" id="button">
-        
-        <a id='button_text' href={AUTH_URL}> Login with Spotify </a>
-
-      </div> */}
+      {(sessionStorage.getItem("loggedIn") == false || !sessionStorage.getItem("loggedIn"))
+      ? <>
+          <div className="row" id="text">
+            <p> <span id="welcome"> Samplfy </span> <br/>Please click below to start using Samplfy</p>
+          </div>
+          <LoginButton></LoginButton>
+        </>
+      : <>
+          <div className="row" id="text">
+            <p> <span id="welcome"> Samplfy </span> <br/>Would you like to log out?</p>
+          </div>
+          <LogoutButton></LogoutButton>
+        </>
+      }
     </div>
   )
 }
