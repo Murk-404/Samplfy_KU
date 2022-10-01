@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'spotify';
+	src: url('../../../font/GothamBook.ttf');
+}
+
+.TableCell {
+  font-size: '20px',
+}
+
+.img {
+	-moz-box-shadow: 4px 4px 2px #ccc;
+  -webkit-box-shadow: 4px 4px 2px #ccc;
+  box-shadow: 4px 4px 2px #ccc;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius:5px;
+}

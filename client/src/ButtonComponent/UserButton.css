@@ -1,0 +1,36 @@
+@font-face {
+	font-family: 'spotify';
+	src: url('../font/GothamBook.ttf');
+}
+/* button {
+  font-family: 'spotify';
+  font-size: 5vw;
+  font-weight: bold;
+  background-color: transparent;
+
+  color: rgb(255, 255, 255, 0.5);
+  border: 7px solid #1DB954;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+} */
+#user-button {
+  /* padding-left: 5vw; */
+  /* padding-right: 5vw; */
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  border-radius: 90px;
+  align-items: center;
+  justify-content: center;
+
+}
+#blank-user {
+  width: 7%;
+}
+#blank-text {
+  font-size: 2vh;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ebebeb;
+  font-family: 'spotify';
+}

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './SamplfyTable.css'
+import './TracksTable.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Bars } from 'react-loader-spinner'
 import {
@@ -11,26 +11,32 @@ import {
   TableCell,
   Paper,
 } from '@mui/material'
-import {db} from '../../firebase-db'
-import { ref, onValue } from 'firebase/database'
+// import {db} from '../../firebase-db'
+// import { ref, onValue } from 'firebase/database'
 
 const theme = createTheme({
   palette: {
     mode: "dark",
+    // primary: {
+    //   light: 'rgba(30, 215, 96, 0.7)',
+    //   main: 'rgba(30, 215, 96, 0.7)',
+    //   dark: 'rgba(30, 215, 96, 0.7)',
+    //   contrastText: 'rgba(30, 215, 96, 0.7)'
+    // }
     // background: {
     //   paper: '#FFFFFF'
     // }
   },
   typography: {
-    htmlFontSize: 12,
-    fontWeightBold: "600",
+    htmlFontSize: 10,
+    fontWeightBold: "700",
     fontFamily: "Arial",
   },
   
 })
 
 // const SamplfyTable = () => {
-export class SamplfyTable extends React.Component {
+export class TracksTable extends React.Component {
   
   constructor(){
     super();
@@ -77,6 +83,8 @@ export class SamplfyTable extends React.Component {
         <TableContainer component={ Paper } sx={{ 
           maxHeight: '70vh', 
           maxWidth: '80vw', 
+          // align: 'center',
+          display: 'flex',
           '&::-webkit-scrollbar': {
             width: 20
           },
@@ -99,7 +107,7 @@ export class SamplfyTable extends React.Component {
             </TableHead>
             <TableBody>
             {
-              this.props.tableData.map((row,index) => {
+              this.props.tracksData.map((row,index) => {
                 return(
                   <TableRow 
                     // onClick={() =>  window.open(row.external_urls.spotify, '_blank')}
@@ -128,4 +136,4 @@ export class SamplfyTable extends React.Component {
   }
 }
 
-export default SamplfyTable
+export default TracksTable
