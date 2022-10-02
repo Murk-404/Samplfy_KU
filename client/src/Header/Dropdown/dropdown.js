@@ -32,7 +32,7 @@ function Dropdown( props ) {
           <MenuIcon id='dropdown-icon'/>
         </Button>
         <Menu
-          id="basic-menu"
+          id="menu"
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}

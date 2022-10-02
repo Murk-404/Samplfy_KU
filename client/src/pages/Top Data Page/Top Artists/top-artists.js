@@ -44,7 +44,7 @@ function TopArtists() {
 
   function waitForLocalStorage(key, cb, timer) {
     if ( ! localStorage.getItem( key ) ) {
-      console.log((localStorage.getItem('username')))
+      // console.log((localStorage.getItem('username')))
       return timer = setTimeout(
         waitForLocalStorage.bind( null, key, cb ),
         100
@@ -68,7 +68,7 @@ function TopArtists() {
   useEffect(() => {
     // getUser().then(() => {
     if(user !== null){
-      console.log(user)
+      // console.log(user)
       var folder = 'top-artists'
       const dbRef = ref(db, `${user}/${folder}`)
       // const dbRef = ref(db, `fullmtyl`)
@@ -133,22 +133,22 @@ function TopArtists() {
                 <Tab sx={{ width: '33%' }} label="All Time" value="3" />
               </TabList>
             </Box>
-            <TabPanel sx={{ paddingLeft: '10vw', paddingLeft: '10vw' }} value="1">{!loading
+            <TabPanel sx={{ paddingLeft: '10vw' }} value="1">{!loading
               // ? <div style={{paddingTop:'25vh'}}>
-              ? <div>
-                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="100%"/>
+              ? <div style={{paddingTop:'25vh'}}>
+                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <ArtistsTable artistsData={sendData3}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw', paddingLeft: '10vw' }} value="2">{!loading
-              ? <div>
-                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="100%"/>
+            <TabPanel sx={{ paddingLeft: '10vw' }} value="2">{!loading
+              ? <div style={{paddingTop:'25vh'}}>
+                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <ArtistsTable artistsData={sendData2}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw', paddingLeft: '10vw' }} value="3">{!loading
-              ? <div>
-                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="100%"/>
+            <TabPanel sx={{ paddingLeft: '10vw' }} value="3">{!loading
+              ? <div style={{paddingTop:'25vh'}}>
+                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <ArtistsTable artistsData={sendData1}/>
             }</TabPanel>

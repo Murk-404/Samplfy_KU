@@ -3,68 +3,60 @@
 	src: url('../font/GothamBook.ttf');
 }
 
-#header {
-    width: 100%;
-    height: 10vh;
-    background-color: rgba(38,41,46,0);
-    display: flex;
-    padding-top: 3vh;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
 #nav_bar {
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
+    height: 75pt;
 }
 
 #logo {
-    height: 7vh;
-    /* padding-top: 1vh;
-    padding-bottom: 1vh;
-    padding-left: 5vw;
-    padding-right: 5vw; */
-    margin-left: auto;
+    margin-right: auto;
+    height: 75pt;
+    padding-left: 10px;
+    padding-top: 12px;
 }
 
-/* .nav_button_divider {
-    background-color: black;
-    height: 100%;
-    width: .1pt;
+#dropdown {
+    float: right;
+    padding-right: 35px;
+}
 
-} */
+#dropdown-icon {
+    color: #ebebeb;
+    width: 10vw;
+    height: 10vh;
+}
 
- .nav_text {
-    height: 7vh;
-    
-    padding-left: 5vw;
-    padding-right: 5vw;
-    font-size: 2vh;
+#dropdown-icon:hover {
+    color: #1DB954;
+}
+
+#menu_buttons {
+    display: flex;
+    float: right;
+    height: 75pt;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-divider {
+    width: 35pt;
+    height: 1px;
+    float: left;
+}
+
+.nav_text {
+    font-size: 20pt;
     font-weight: bold;
     text-decoration: none;
     color: #ebebeb;
     font-family: 'spotify';
-    /* align-items: center;
-    justify-content: center; */
 }
-
-/* .login {
-    padding-left: 5vw;
-    padding-right: 5vw;
-    font-size: 2vh;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ebebeb;
-    font-family: 'spotify';
-} */
 
 .nav_text:hover {
     color: #1DB954;
 }
 
-.user-container {
-    width: 15%;
+#user-container {
+    width: 132pt;
+    margin-right: 10pt;
+    float: right;
 }

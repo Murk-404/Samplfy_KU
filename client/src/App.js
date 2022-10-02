@@ -5,11 +5,7 @@ import Main from './Main';
 import React, { useState, useEffect } from 'react'
 
 class App extends React.Component {
-
-  constructor(props){
-    super(props);
-
-  }
+  
   render() {
     return (
       <div className="bg-image">

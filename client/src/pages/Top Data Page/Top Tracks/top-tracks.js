@@ -22,9 +22,6 @@ const theme = createTheme({
       dark: 'rgba(30, 215, 96, 0.7)',
       contrastText: 'rgba(30, 215, 96, 0.7)'
     }
-    // background: {
-    //   paper: '#FFFFFF'
-    // }
   },
   typography: {
     htmlFontSize: 10,
@@ -44,7 +41,7 @@ function TopTracks() {
 
   function waitForLocalStorage(key, cb, timer) {
     if ( ! localStorage.getItem( key ) ) {
-      console.log((localStorage.getItem('username')))
+      // console.log((localStorage.getItem('username')))
       return timer = setTimeout(
         waitForLocalStorage.bind( null, key, cb ),
         100
@@ -66,12 +63,10 @@ function TopTracks() {
   } else {}
 
   useEffect(() => {
-    // getUser().then(() => {
     if(user !== null){
-      console.log(user)
+      // console.log(user)
       var folder = 'top-tracks'
       const dbRef = ref(db, `${user}/${folder}`)
-      // const dbRef = ref(db, `fullmtyl`)
       onValue(dbRef, (snapshot)=>{
         let records = [];
         snapshot.forEach(childSnapshot => {
@@ -82,7 +77,6 @@ function TopTracks() {
         setSendData1(records[0].data.items)
         setSendData2(records[1].data.items)
         setSendData3(records[2].data.items)
-        // console.log(`This is the data: ${sendData1}`)
         setLoading({loading: true})
       })
     }
@@ -100,10 +94,8 @@ function TopTracks() {
           <TabContext value={index}>
           <Box sx={{ borderColor: '#FFFFFF', paddingTop: '3vh' }}>
               <TabList 
-                // TabIndicatorProps={{style: { background: 'rgba(30, 215, 96, 0.7)' }}}
                 
                 textColor="primary"
-                // indicatorColor="primary" 
                 sx={{ 
                   fontWeight:'bold',
                   "& button": { backgroundColor: 'rgba(255, 255, 255, 0.0)' },
@@ -121,21 +113,21 @@ function TopTracks() {
                 <Tab sx={{ width: '33%' }} label="All Time" value="3" />
               </TabList>
             </Box>
-            <TabPanel sx={{ paddingLeft: '10vw', paddingLeft: '10vw' }} value="1">{!loading
+            <TabPanel sx={{ paddingLeft: '10vw' }} value="1">{!loading
               ? <div style={{paddingTop:'25vh'}}>
-                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="100%"/>
+                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <TracksTable tracksData={sendData3}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw', paddingLeft: '10vw' }} value="2">{!loading
+            <TabPanel sx={{ paddingLeft: '10vw' }} value="2">{!loading
               ? <div style={{paddingTop:'25vh'}}>
-                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="100%"/>
+                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <TracksTable tracksData={sendData2}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw', paddingLeft: '10vw' }} value="3">{!loading
+            <TabPanel sx={{ paddingLeft: '10vw' }} value="3">{!loading
               ? <div style={{paddingTop:'25vh'}}>
-                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="100%"/>
+                  <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <TracksTable tracksData={sendData1}/>
             }</TabPanel>

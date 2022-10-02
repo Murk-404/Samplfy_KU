@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom'
 import './Content.css'
 import React, { useState, useEffect } from 'react';
-import LoginButton from '../ButtonComponent/LoginButton';
-import LogoutButton from '../ButtonComponent/LogoutButton';
+import LogButton from '../ButtonComponent/LogButton';
+// import LogoutButton from '../ButtonComponent/LogoutButton';
 // function fireTest() {
 //   const [customerName, setCustomerName] = useState("");
 //   const [customerPassword, setCustomerPassword] = useState("");
@@ -59,19 +59,14 @@ function Content() {
   return (
     <div className="container-container">
       {(sessionStorage.getItem("loggedIn") == false || !sessionStorage.getItem("loggedIn"))
-      ? <>
-          <div className="row" id="text">
-            <p> <span id="welcome"> Samplfy </span> <br/>Please click below to start using Samplfy</p>
-          </div>
-          <LoginButton></LoginButton>
-        </>
-      : <>
-          <div className="row" id="text">
-            <p> <span id="welcome"> Samplfy </span> <br/>Would you like to log out?</p>
-          </div>
-          <LogoutButton></LogoutButton>
-        </>
+      ?<div className="row" id="text">
+        <p> <span id="welcome"> Samplfy </span> <br/>Please click below to start using Samplfy</p>
+      </div>
+      :<div className="row" id="text">
+        <p> <span id="welcome"> Samplfy </span> <br/>Would you like to log out?</p>
+      </div> 
       }
+      <LogButton></LogButton>
     </div>
   )
 }

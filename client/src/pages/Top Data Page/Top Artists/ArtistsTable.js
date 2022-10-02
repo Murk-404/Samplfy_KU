@@ -30,6 +30,7 @@ const theme = createTheme({
 })
 function exist(row) {
   try {
+    // DO NOT REMOVE THIS CONSOLE LOG
     console.log(row.images[2].url)
     return true;
   } catch {
@@ -76,7 +77,7 @@ export class ArtistsTable extends React.Component {
   render() {
     // console.log(this.props.tableData)
     // console.log(this.state.newData)
-    console.log(this.props.artistsData)
+    // console.log(this.props.artistsData)
 
     return (
       <ThemeProvider theme={theme}>

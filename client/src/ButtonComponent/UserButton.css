@@ -16,21 +16,50 @@
 #user-button {
   /* padding-left: 5vw; */
   /* padding-right: 5vw; */
-  background-color: rgba(255, 255, 255, 0.5);
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  background-color: #1DB954;
+  padding-top: 14pt;
+  padding-bottom: 12pt;
+  padding-right: 5pt;
   border-radius: 90px;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-}
-#blank-user {
-  width: 7%;
-}
-#blank-text {
-  font-size: 2vh;
-  font-weight: bold;
   text-decoration: none;
-  color: #ebebeb;
+}
+#user-button-logged {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #1DB954;
+  padding-top: 14pt;
+  padding-bottom: 12pt;
+  padding-right: 5pt;
+  border-radius: 90px;
+}
+#user-button:hover {
+  background-color: #28a745;
+}
+
+#blank-user {
+  width: 20%;
+}
+#logged-user {
+  width: 20%;
+}
+
+#blank-text {
+  font-size: 20pt;
+  font-weight: bold;
+  padding-left: 6pt;
+  color: #191414;
+  font-family: 'spotify';
+}
+
+#user-text {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 6pt;
+  color: #191414;
   font-family: 'spotify';
 }
