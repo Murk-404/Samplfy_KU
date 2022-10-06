@@ -4,9 +4,12 @@ import spotipy
 # import json
 from firebase import Firebase
 import firebase
+import sys
 
-exec(open("C:\Spotify_React_Project\server\env.py").read())
-SCOPE = open('C:\Spotify_Project\website-files\Spotify_Auth\scopes.txt').read()
+# print("EMAIL: " + sys.argv[1])
+
+exec(open('C:\Spotify_React_Project\server\env.py').read())
+SCOPE = open('C:\Spotify_React_Project\server\scopes.txt').read()
 
 top_data = []
 cache_handler = spotipy.cache_handler.MemoryCacheHandler()
@@ -62,5 +65,6 @@ db.child(username).child("top-tracks").child("top-tracks-long").set(top_tracks_l
 db.child(username).child("top-artists").child("top-artists-short").set(top_artists_short)
 db.child(username).child("top-artists").child("top-artists-medium").set(top_artists_medium)
 db.child(username).child("top-artists").child("top-artists-long").set(top_artists_long)
+db.child(username).child("user-token").set(token)
   
 print(username + '$' + pfp + '$' + name)
