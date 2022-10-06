@@ -62,8 +62,7 @@ export class TracksTable extends React.Component {
             {
               this.props.tracksData.map((row,index) => {
                 return(
-                  <TableRow 
-                  >
+                  <TableRow>
                     <TableCell>{index + 1}</TableCell>
                     <TableCell><img className='img' src={row.album.images[2].url}></img></TableCell>
                     <TableCell 
@@ -74,7 +73,6 @@ export class TracksTable extends React.Component {
                       sx={{ cursor: 'pointer', fontWeight: 'bold', width: '30%' }} 
                       onClick={() =>  window.open(row.artists[0].external_urls.spotify, '_blank')}
                     >{row.artists[0].name}</TableCell>
-
                   </TableRow>
                 )
               })

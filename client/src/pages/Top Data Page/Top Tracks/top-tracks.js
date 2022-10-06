@@ -1,6 +1,6 @@
 import './top-tracks.css'
 // import * as React from 'react';
-
+import PlaylistModal from './PlaylistModal/PlaylistModal';
 import TracksTable from './TracksTable'
 import React, {useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
@@ -132,6 +132,7 @@ function TopTracks() {
               : <TracksTable tracksData={sendData1}/>
             }</TabPanel>
           </TabContext>
+          {!loading?<></>:<PlaylistModal index={index}/>} 
         </Box>
       </ThemeProvider>
     </div>

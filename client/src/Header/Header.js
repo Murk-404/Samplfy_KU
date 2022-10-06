@@ -6,27 +6,31 @@ import UserButton from '../ButtonComponent/UserButton'
 import logo2 from '../images/samplfy-icon-frame.png'
 import Dropdown from './Dropdown/dropdown'
 import useWindowDimensions from '../hooks/window-dimensions'
-
-function sendRequest() {
-  fetch('/api').then(
-    
-    response => response.json()
-    
-  ).then(
-    data => {
-      data = data.slice(0, -2)
-      // setBackendData(data)
-      // localStorage.setItem('type', typeof(data))
-      localStorage.setItem('username', data)
-      sessionStorage.setItem('loggedIn', true)
-      // console.log(backendData)
-    }
-  )
-  
-}
+import { useState } from 'react'
 
 export default function Header() {
   const { height, width } = useWindowDimensions();
+  const [loggedIn, setLoggedIn] = useState(false)
+  function sendRequest() {
+
+
+    fetch('/api').then(
+      
+      response => response.json()
+      
+    ).then(
+      data => {
+        data = data.slice(0, -2)
+        // setBackendData(data)
+        // localStorage.setItem('type', typeof(data))
+        localStorage.setItem('username', data)
+        sessionStorage.setItem('loggedIn', true)
+        setLoggedIn(true)
+        // console.log(backendData)
+      }
+    )
+    
+  }
   var logo_content = logo;
   var header_content = (
     <div id='menu_buttons'>
@@ -34,9 +38,9 @@ export default function Header() {
       <div className='text-divider'></div>
       <NavLink to='/about' style={{textDecoration: 'none'}}> <span class='nav_text'>About</span> </NavLink>
       <div className='text-divider'></div>
-      {(sessionStorage.getItem("loggedIn") == false || !sessionStorage.getItem("loggedIn"))
-      ? <NavLink id='login' to='/top-tracks' onClick={ sendRequest } style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
-      : <NavLink to='/top-tracks' style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
+      {!loggedIn
+      ? <NavLink to='/top-tracks' style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
+      : <NavLink id='login' to='/top-tracks' onClick={ sendRequest } style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
       }
       <div className='text-divider'></div>
       <NavLink to='/top-artists' style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Artists</span> </NavLink>
@@ -51,9 +55,9 @@ export default function Header() {
       <Dropdown>
         <NavLink to='/features' style={{textDecoration: 'none'}}> <span class='nav_text'>Features</span> </NavLink>
         <NavLink to='/about' style={{textDecoration: 'none'}}> <span class='nav_text'>About</span> </NavLink>
-        {(sessionStorage.getItem("loggedIn") == false || !sessionStorage.getItem("loggedIn"))
-        ? <NavLink id='login' to='/top-tracks' onClick={ sendRequest } style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
-        : <NavLink to='/top-tracks' style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
+        {!loggedIn
+        ? <NavLink to='/top-tracks' style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
+        : <NavLink id='login' to='/top-tracks' onClick={ sendRequest } style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Tracks</span> </NavLink>
         }
         <NavLink to='/top-artists' style={{ textDecoration: 'none'}}> <span class='nav_text'>Top Artists</span> </NavLink>
       </Dropdown>

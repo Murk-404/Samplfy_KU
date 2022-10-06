@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react'
+
+// const dataToSend = {
+//   email: 'test@example.com'
+// }
+
 const sendRequest = function() {
+  // fetch('/api', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(dataToSend)
+  // }).then(
   fetch('/api').then(
     
     response => response.json()
     
   ).then(
     data => {
-      // data = data.slice(0, -2)
-      // console.log(data)
-      var index = data.indexOf('$')
-      var username = data.slice(0, index)
-      var pfp = data.slice(index + 1, -2)
-      var index1 = pfp.indexOf('$')
-      var pfp1 = pfp.slice(0, index1)
-      var name = pfp.slice(index1 + 1, pfp.length)
-      localStorage.setItem('profile-pic', pfp1)
-      localStorage.setItem('username', username)
-      localStorage.setItem('display-name', name)
-
+      localStorage.setItem('profile-pic', data.profile)
+      localStorage.setItem('username', data.username)
+      localStorage.setItem('display-name', data.name)
       sessionStorage.setItem('loggedIn', true)
     }
   )
