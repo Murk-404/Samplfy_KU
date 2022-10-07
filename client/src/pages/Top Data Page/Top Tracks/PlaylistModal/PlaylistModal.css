@@ -16,7 +16,6 @@
 }
 
 #button {
-  /* position: absolute; */
   border-radius: 90px;
   margin-top: 8em;
   padding-top: 1.5vh;
@@ -45,7 +44,4 @@
   height: auto;
   width: 100%;
   align-items: center;
-  /* border: 3px solid green; */
-
-
 }

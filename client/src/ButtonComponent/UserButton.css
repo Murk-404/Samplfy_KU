@@ -2,20 +2,8 @@
 	font-family: 'spotify';
 	src: url('../font/GothamBook.ttf');
 }
-/* button {
-  font-family: 'spotify';
-  font-size: 5vw;
-  font-weight: bold;
-  background-color: transparent;
 
-  color: rgb(255, 255, 255, 0.5);
-  border: 7px solid #1DB954;
-  border-radius: 40px;
-  transition: all 0.2s ease;
-} */
 #user-button {
-  /* padding-left: 5vw; */
-  /* padding-right: 5vw; */
   background-color: #1DB954;
   padding-top: 14pt;
   padding-bottom: 12pt;

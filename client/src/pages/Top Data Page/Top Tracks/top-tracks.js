@@ -1,5 +1,4 @@
 import './top-tracks.css'
-// import * as React from 'react';
 import PlaylistModal from './PlaylistModal/PlaylistModal';
 import TracksTable from './TracksTable'
 import React, {useState, useEffect } from 'react'
@@ -41,7 +40,6 @@ function TopTracks() {
 
   function waitForLocalStorage(key, cb, timer) {
     if ( ! localStorage.getItem( key ) ) {
-      // console.log((localStorage.getItem('username')))
       return timer = setTimeout(
         waitForLocalStorage.bind( null, key, cb ),
         100
@@ -64,7 +62,6 @@ function TopTracks() {
 
   useEffect(() => {
     if(user !== null){
-      // console.log(user)
       var folder = 'top-tracks'
       const dbRef = ref(db, `${user}/${folder}`)
       onValue(dbRef, (snapshot)=>{
@@ -81,10 +78,9 @@ function TopTracks() {
       })
     }
     else {}
-    // })
   },[user])
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setIndex(newValue);
   };
   return (
@@ -94,21 +90,15 @@ function TopTracks() {
           <TabContext value={index}>
           <Box sx={{ borderColor: '#FFFFFF', paddingTop: '3vh' }}>
               <TabList 
-                
                 textColor="primary"
                 sx={{ 
                   fontWeight:'bold',
                   "& button": { backgroundColor: 'rgba(255, 255, 255, 0.0)' },
                   "& button:hover": { backgroundColor: 'rgba(255, 255, 255, 0.3)' },
-                  // "& button:focus": { backgroundColor: 'rgba(255, 255, 255, 0.3)' },
                   "& button:active": { backgroundColor: 'rgba(30, 215, 96, 0.3)' },
-                  // variant: "fullWidth"
                 }} 
-                // textColor='green'
                 centered='true' onChange={handleChange}>
-                {/* <Tab sx={{ width: '33%' }} label={<span style={{ color: 'rgba(30, 215, 96, 0.7)' }}>Short Term</span>} value="1" /> */}
                 <Tab sx={{ width: '33%' }} label="Short Term" value="1" />
-                {/* <Tab sx={{ marginLeft: '12vw', marginRight: '12vw' }} label="Medium Term" value="2" /> */}
                 <Tab sx={{ width: '33%' }} label="Medium Term" value="2" />
                 <Tab sx={{ width: '33%' }} label="All Time" value="3" />
               </TabList>
@@ -137,7 +127,6 @@ function TopTracks() {
       </ThemeProvider>
     </div>
   )
-  
 }
 
 export default TopTracks;

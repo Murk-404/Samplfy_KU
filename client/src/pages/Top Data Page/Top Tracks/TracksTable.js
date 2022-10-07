@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './TracksTable.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Bars } from 'react-loader-spinner'
 import {
   TableContainer,
   Table,
@@ -25,10 +24,6 @@ const theme = createTheme({
 })
 
 export class TracksTable extends React.Component {
-  
-  constructor(){
-    super();
-  }
   
   render() {
 
@@ -64,7 +59,7 @@ export class TracksTable extends React.Component {
                 return(
                   <TableRow>
                     <TableCell>{index + 1}</TableCell>
-                    <TableCell><img className='img' src={row.album.images[2].url}></img></TableCell>
+                    <TableCell><img className='img' alt='' src={row.album.images[2].url}></img></TableCell>
                     <TableCell 
                       sx={{ cursor: 'pointer', fontWeight: 'bold', width: '50%' }} 
                       onClick={() =>  window.open(row.external_urls.spotify, '_blank')}
@@ -78,7 +73,6 @@ export class TracksTable extends React.Component {
               })
             }
             </TableBody>
-            
           </Table>
         </TableContainer>
       </ThemeProvider>

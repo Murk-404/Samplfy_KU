@@ -9,24 +9,23 @@ import useWindowDimensions from '../hooks/window-dimensions'
 import { useState } from 'react'
 
 export default function Header() {
-  const { height, width } = useWindowDimensions();
+  // const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
+
   const [loggedIn, setLoggedIn] = useState(false)
   function sendRequest() {
 
 
-    fetch('/api').then(
+    fetch('/login').then(
       
       response => response.json()
       
     ).then(
       data => {
         data = data.slice(0, -2)
-        // setBackendData(data)
-        // localStorage.setItem('type', typeof(data))
         localStorage.setItem('username', data)
         sessionStorage.setItem('loggedIn', true)
         setLoggedIn(true)
-        // console.log(backendData)
       }
     )
     
