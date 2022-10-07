@@ -67,4 +67,4 @@ db.child(username).child("top-artists").child("top-artists-medium").set(top_arti
 db.child(username).child("top-artists").child("top-artists-long").set(top_artists_long)
 db.child(username).child("user-token").set(token)
   
-print(username + '$' + pfp + '$' + name)
+print(username + '$' + pfp + '$' + name) 
