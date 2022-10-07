@@ -1,7 +1,4 @@
 import spotipy
-# from spotipy import CacheHandler
-# from spotipy.oauth2 import SpotifyAuthBase
-# import json
 from firebase import Firebase
 import firebase
 import sys
@@ -21,8 +18,6 @@ if(visibility == 'true'):
   visibility = True
 else:
   visibility = False
-print(visibility)
-
 
 config  = {
   "apiKey": "AIzaSyDeoQZ6j4Y4w-t4fXqatjvcHFc2TaJ75d0",
@@ -41,15 +36,9 @@ playlistArr = []
 
 for key in data['items']:
   playlistArr.append(key['uri'])
-  # print(key['uri'])
-
-# for i in playlistArr:
-#   print(i)
 
 SPOTIFY = spotipy.Spotify(auth=token)
 SPOTIFY.user_playlist_create(user, name=title, public=visibility, description=description)
-# SPOTIFY.user_playlist_create(user, name=title, description=description)
-
 
 playlist_id = ''
 playlists = SPOTIFY.user_playlists(user)

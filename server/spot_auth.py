@@ -1,15 +1,9 @@
 import spotipy
-# from spotipy import CacheHandler
-# from spotipy.oauth2 import SpotifyAuthBase
-# import json
 from firebase import Firebase
 import firebase
-import sys
 
-# print("EMAIL: " + sys.argv[1])
-
-exec(open('C:\Spotify_React_Project\server\env.py').read())
-SCOPE = open('C:\Spotify_React_Project\server\scopes.txt').read()
+exec(open('./env.py').read())
+SCOPE = open('./scopes.txt').read()
 
 top_data = []
 cache_handler = spotipy.cache_handler.MemoryCacheHandler()
