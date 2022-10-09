@@ -26,7 +26,7 @@ export default function LogButton() {
           to='/top-tracks' 
           id='button_text' 
           style={{ cursor: 'pointer' }} 
-          onClick={ sendRequest }> 
+          onClick={ () => sendRequest() }> 
           Login with Spotify 
         </NavLink>
       </div>

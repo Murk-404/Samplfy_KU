@@ -41,9 +41,9 @@ export default function PlaylistModal(props) {
     setOpen(false);
     setStatus(1);
   }
+
   const [checked, setChecked] = useState({ public: true, private: false });
   const [status, setStatus] = useState(1);
-
   const changeRadio = (e) => {
     setChecked(() => {
       return {
@@ -53,6 +53,7 @@ export default function PlaylistModal(props) {
       };
     });
   };
+  
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -77,7 +78,6 @@ export default function PlaylistModal(props) {
         localStorage.setItem('completed', response.completed)
       }
     )
-    
   }
   
   const handleSubmit = (e) => {

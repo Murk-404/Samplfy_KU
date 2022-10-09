@@ -3,6 +3,7 @@ const logout = function() {
   localStorage.removeItem('username');
   localStorage.removeItem('profile-pic');
   localStorage.removeItem('display-name');
+  localStorage.removeItem('auth-code');
   window.location.replace('/')
 }
 
