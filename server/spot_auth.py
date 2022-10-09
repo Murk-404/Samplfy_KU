@@ -1,14 +1,23 @@
 import spotipy
+# from spotipy import CacheHandler
+# from spotipy.oauth2 import SpotifyAuthBase
+# import json
 from firebase import Firebase
 import firebase
+import sys
 
+# print("EMAIL: " + sys.argv[1])
+
+# exec(open('./server/env.py').read())
+# SCOPE = open('./server/scopes.txt').read()
 exec(open('./env.py').read())
 SCOPE = open('./scopes.txt').read()
+token = sys.argv[1]
 
 top_data = []
 cache_handler = spotipy.cache_handler.MemoryCacheHandler()
 oauth_manager = spotipy.oauth2.SpotifyOAuth(cache_handler=cache_handler, scope=SCOPE)
-token = spotipy.util.prompt_for_user_token(oauth_manager=oauth_manager)
+# token = spotipy.util.prompt_for_user_token(oauth_manager=oauth_manager)
 SPOTIFY = spotipy.Spotify(auth=token)
 
 username = SPOTIFY.current_user()['id']
@@ -61,4 +70,4 @@ db.child(username).child("top-artists").child("top-artists-medium").set(top_arti
 db.child(username).child("top-artists").child("top-artists-long").set(top_artists_long)
 db.child(username).child("user-token").set(token)
   
-print(username + '$' + pfp + '$' + name) 
+print(username + '$' + pfp + '$' + name)

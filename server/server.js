@@ -22,8 +22,11 @@ app.post('/playlist', (req, res) => {
   });
 });
 
-app.get('/login', (req, res) => {
-  const child = spawner('python', ['./spot_auth.py']);
+app.post('/login', (req, res) => {
+  console.log(req.body.data.access_token)
+  data = [req.body.data.access_token]
+  // const data = [req.body.data.token.toString()];
+  const child = spawner('python', ['./spot_auth.py', data[0]]);
   child.stdout.on('data', (data) => {
     const dataArr = (`${data}`).split('$')
     dataArr.forEach(element => console.log(element))
