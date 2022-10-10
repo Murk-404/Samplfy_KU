@@ -25,21 +25,23 @@ app.post('/playlist', (req, res) => {
 app.post('/login', (req, res) => {
   console.log(req.body.data.access_token)
   data = [req.body.data.access_token]
-  // const data = [req.body.data.token.toString()];
-  const child = spawner('python', ['./spot_auth.py', data[0]]);
-  child.stdout.on('data', (data) => {
-    const dataArr = (`${data}`).split('$')
-    dataArr.forEach(element => console.log(element))
-    res.json({
-      username: `${dataArr[0]}`,
-      profile: `${dataArr[1]}`,
-      name: `${dataArr[2]}`,
-    })
-  });
-  child.stderr.on('data', (data) => {
-    console.log(`stderr: ${data}`);
-    res.send(data)
-  });
+  if(data[0]!==undefined){
+    const child = spawner('python', ['./spot_auth.py', data[0]]);
+    child.stdout.on('data', (data) => {
+      const dataArr = (`${data}`).split('$')
+      dataArr.forEach(element => console.log(element))
+      res.json({
+        username: `${dataArr[0]}`,
+        profile: `${dataArr[1]}`,
+        name: `${dataArr[2]}`,
+      })
+    });
+    child.stderr.on('data', (data) => {
+      console.log(`stderr: ${data}`);
+      res.send(data)
+    });
+  }
+  else{}
 });
 
 app.listen(port, () => console.log('listening on port ' + port));
