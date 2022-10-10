@@ -2,7 +2,7 @@ import sendRequest from './functions/sendRequest'
 import logout from './functions/logout'
 import './LogButton.css'
 import { NavLink } from 'react-router-dom'
-import icon from '..\\src\\images\\samplfy-icon-black.png'
+import icon from '../images/samplfy-icon-black.png'
 import React from 'react'
 
 
