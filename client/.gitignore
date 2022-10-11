@@ -2,12 +2,12 @@
 
 # dependencies
 /node_modules
-/public
-/src
+# /public
+# /src
 /server/node_modules
 /client/node_modules
-/client/src
-/client/public
+# /client/src
+# /client/public
 
 /.pnp
 .pnp.js
