@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.70ba4baa.css",
-    "main.js": "/static/js/main.9106a068.js",
+    "main.js": "/static/js/main.eb372814.js",
     "static/media/image-dark.png": "/static/media/image-dark.7eef7c89bef01f3bbf7e.png",
     "static/media/samplfy-icon-black.png": "/static/media/samplfy-icon-black.1a01d7d45b673589b505.png",
     "static/media/samplfy-logo-new.png": "/static/media/samplfy-logo-new.a4b1e5e1607e16decd4d.png",
@@ -10,10 +10,10 @@
     "static/media/spotify-icon-logo.svg": "/static/media/spotify-icon-logo.f71e6773ba7167f90ce5c38ef61b5cb6.svg",
     "index.html": "/index.html",
     "main.70ba4baa.css.map": "/static/css/main.70ba4baa.css.map",
-    "main.9106a068.js.map": "/static/js/main.9106a068.js.map"
+    "main.eb372814.js.map": "/static/js/main.eb372814.js.map"
   },
   "entrypoints": [
     "static/css/main.70ba4baa.css",
-    "static/js/main.9106a068.js"
+    "static/js/main.eb372814.js"
   ]
 }
