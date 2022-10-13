@@ -6,6 +6,7 @@ const getCode = function() {
     // const state = id();
     const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
     const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
+
     const SCOPES = concatScopes()
     const spotifyUrl =
       'https://accounts.spotify.com/authorize?' +
@@ -17,6 +18,8 @@ const getCode = function() {
         scope: SCOPES,
       }).toString();
     window.location.replace(spotifyUrl);
+    // window.open(spotifyUrl, '_blank');
+
   }
   else {}
 }

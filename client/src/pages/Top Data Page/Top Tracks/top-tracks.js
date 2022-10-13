@@ -13,10 +13,6 @@ import { Bars } from 'react-loader-spinner'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import {Buffer} from 'buffer';
 
-// const port = 3000
-// const CLIENT_ID = '53c0537d418540e08a9f37fa33e35052'
-// const CLIENT_SECRET = '3fc6ed86ebf6482291f9ad061aa3d5d1'
-// const REDIRECT_URI = `http://localhost:${port}/top-tracks`;
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
@@ -45,6 +41,7 @@ const fetchServer = function(allData) {
   )
 }
 async function getToken(reqBody) {
+  console.log(reqBody.toString())
   const token = await fetch(
     'https://accounts.spotify.com/api/token',
     {
