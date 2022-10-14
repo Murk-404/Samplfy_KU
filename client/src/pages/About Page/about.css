@@ -3,23 +3,48 @@
 	src: url('../../font/GothamBook.ttf');
 }
 
-#container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 55vw;
-    max-height: 85vh;
-    min-height: 1vh;
-    position: relative;
+#about-container {
+    margin-top: 20pt;
+    width: 100%;
 }
 
-#text {
-    position: absolute;
-    height: 35vw;
-    margin: auto;
+#about-title {
+    font-size: 35pt;
     color: #ebebeb;
     font-family: 'spotify';
-    font-size: 4vw;
-    font-weight: lighter;
     text-align: center;
+    font-weight: bold;
+    padding-left: 10pt;
+    padding-right: 10pt;
+    width: fit-content;
+    margin: auto;
+}
+
+.about-header {
+    margin-top: 15pt;
+    font-size: 25pt;
+    color: #ebebeb;
+    font-family: 'spotify';
+    text-align: center;
+}
+
+#about-title-bar {
+    height: 7pt;
+    width: 100%;
+    background-color: #1DB954;
+    margin-top: 5pt;
+
+}
+
+.about-text-box {
+    background-color: #1e1e1ee6;
+    padding: 8pt;
+    border-radius: 20pt;
+    font-size: 20pt;
+    color: #cbd1cd;
+    font-family: 'spotify';
+    font-weight: lighter;
+    max-width: 720px;
+    margin: auto;
+    margin-top: 20pt;
 }

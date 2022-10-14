@@ -10,6 +10,7 @@ import {
   TableCell,
   Paper,
 } from '@mui/material'
+import { isMobile } from "react-device-detect"
 
 const theme = createTheme({
   palette: {
@@ -32,12 +33,20 @@ function exist(row) {
   }
 }
 
+function getWindowSize() {
+  const {innerWidth, innerHeight} = window;
+  return {innerWidth, innerHeight};
+}
+
 export class ArtistsTable extends React.Component {
   
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <TableContainer component={ Paper } sx={{ 
+        <TableContainer component={ Paper } sx={ isMobile ? { 
+          maxHeight: getWindowSize().innerHeight - 345 + 'px', 
+          display: 'flex',
+          }:{ 
           maxHeight: '70vh', 
           maxWidth: '80vw', 
           '&::-webkit-scrollbar': {
@@ -53,7 +62,7 @@ export class ArtistsTable extends React.Component {
           <Table aria-label='simple table' stickyHeader>
             <TableHead>
               <TableRow>
-                <TableCell>Index</TableCell>
+              {isMobile ? '' : <TableCell>Index</TableCell>}
                 <TableCell>Cover</TableCell>
                 <TableCell>Artist</TableCell>
                 <TableCell>Genre</TableCell>
@@ -64,7 +73,7 @@ export class ArtistsTable extends React.Component {
               this.props.artistsData.map((row,index) => {
                 return(
                   <TableRow>
-                    <TableCell sx={{ fontWeight: 'bold', fontSize: 35 }}>{index + 1}</TableCell>
+                     {isMobile ? '' : <TableCell sx={{ fontWeight: 'bold', fontSize: 35 }}>{index + 1}</TableCell>}
                     {!(exist(row))
                     ?<TableCell></TableCell>
                     :<TableCell><img className='img' alt='' src={row.images[2].url}></img></TableCell>

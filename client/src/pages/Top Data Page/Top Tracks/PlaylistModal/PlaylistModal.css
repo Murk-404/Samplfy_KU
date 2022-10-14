@@ -22,7 +22,7 @@
   padding-bottom: 1.5vh;
   padding-left: 3vw;
   padding-right: 3vw;
-  background: #1DB954;
+  background: #28a745;
   transition: all 0.2s ease;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@
 }
 
 #button:hover {
-  background: #28a745;
+  background: #1DB954;
 }
 
 #icon {

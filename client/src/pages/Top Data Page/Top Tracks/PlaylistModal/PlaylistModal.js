@@ -22,12 +22,12 @@ const button = {
   paddingBottom: '1.5vh',
   paddingLeft: '3vw',
   paddingRight: '3vw',
-  background: '#1DB954',
+  background: '#28a745',
   transition: 'all 0.2s ease',
   color: '#FFFFFF',
   width: '60%',
   '&:hover': {
-    backgroundColor: '#28a745',
+    backgroundColor: '#1DB954',
   }
 }
 

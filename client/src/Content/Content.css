@@ -5,25 +5,23 @@
 .container-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 55vw;
-  max-height: 85vh;
-  min-height: 1vh;
   position: relative;
+  width: 100%;
+  height: auto;
 }
+
 #text {
-  position: absolute;
-  height: 35vw;
   margin: auto;
   color: #ebebeb;
   font-family: 'spotify';
-  font-size: 3vw;
+  font-size: 20pt;
   font-weight: lighter;
   text-align: center;
 }
 
 #welcome {
-  font-size: 6vw;
+  margin-top: 20pt;
+  font-size: 50pt;
   font-weight: bold;
 }
 

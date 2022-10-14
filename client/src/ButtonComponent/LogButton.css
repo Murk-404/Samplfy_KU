@@ -5,29 +5,30 @@
 
 #button_text {
   font-family: 'spotify';
-  font-size: 4em;
+  font-size: 20pt;
   text-align: center;
   font-weight: bold;
   background-color: transparent;
   color: #191414;
   transition: all 0.2s ease;
   text-decoration: none;
-  padding-left: 2%;
+  padding-left: 5pt;
+  padding-right: 10pt;
 }
 
 #button {
-  position: absolute;
+  margin: auto;
+  margin-top: 20pt;
   border-radius: 90px;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-  padding-left: 5vw;
-  padding-right: 4vw;
+  padding-top: 10pt;
+  padding-bottom: 10pt;
   background: #1DB954;
   transition: all 0.2s ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: fit-content;
+  height: fit-content;
 }
 
 #button:hover {
@@ -35,6 +36,7 @@
 }
 
 #icon {
-  width: 8%;
-  height: 8%;
+  margin-left: 10pt;
+  width: 26pt;
+  height: 26pt;
 }

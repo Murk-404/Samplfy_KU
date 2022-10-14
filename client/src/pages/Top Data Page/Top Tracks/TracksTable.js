@@ -10,6 +10,8 @@ import {
   TableCell,
   Paper,
 } from '@mui/material'
+import useWindowDimensions from '../../../hooks/window-dimensions'
+import { isMobile } from "react-device-detect";
 
 const theme = createTheme({
   palette: {
@@ -23,16 +25,26 @@ const theme = createTheme({
   
 })
 
+function getWindowSize() {
+  const {innerWidth, innerHeight} = window;
+  return {innerWidth, innerHeight};
+}
+
+console.log(getWindowSize().innerHeight - 345 + 'px')
+
 export class TracksTable extends React.Component {
   
+  
   render() {
-
+    
     return (
       <ThemeProvider theme={theme}>
         
-        <TableContainer component={ Paper } sx={{ 
+        <TableContainer component={ Paper } sx={ isMobile ? { 
+          maxHeight: getWindowSize().innerHeight - 345 + 'px', 
+          display: 'flex',
+          }:{ 
           maxHeight: '70vh', 
-          maxWidth: '80vw', 
           display: 'flex',
           '&::-webkit-scrollbar': {
             width: 20
@@ -47,7 +59,7 @@ export class TracksTable extends React.Component {
           <Table aria-label='simple table' stickyHeader>
             <TableHead>
               <TableRow>
-                <TableCell>Index</TableCell>
+                {isMobile ? '' : <TableCell>Index</TableCell>}
                 <TableCell>Artwork</TableCell>
                 <TableCell>Track</TableCell>
                 <TableCell>Artist</TableCell>
@@ -58,7 +70,7 @@ export class TracksTable extends React.Component {
               this.props.tracksData.map((row,index) => {
                 return(
                   <TableRow>
-                    <TableCell>{index + 1}</TableCell>
+                    {isMobile ? '' : <TableCell>{index + 1}</TableCell>}
                     <TableCell><img className='img' alt='' src={row.album.images[2].url}></img></TableCell>
                     <TableCell 
                       sx={{ cursor: 'pointer', fontWeight: 'bold', width: '50%' }} 

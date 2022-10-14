@@ -12,6 +12,7 @@ import {db} from '../../../firebase-db'
 import { ref, onValue } from 'firebase/database'
 import { Bars } from 'react-loader-spinner'
 import { ThemeProvider, createTheme, green } from '@mui/material/styles';
+import { isMobile } from "react-device-detect";
 
 const theme = createTheme({
   palette: {
@@ -133,21 +134,21 @@ function TopArtists() {
                 <Tab sx={{ width: '33%' }} label="All Time" value="3" />
               </TabList>
             </Box>
-            <TabPanel sx={{ paddingLeft: '10vw' }} value="1">{!loading
+            <TabPanel sx={isMobile ? {padding: '2px', paddingTop: '10px'} : { paddingLeft: '10%', paddingRight: '10%'}} value="1">{!loading
               // ? <div style={{paddingTop:'25vh'}}>
-              ? <div style={{paddingTop:'25vh'}}>
+              ? <div style={{paddingTop:'10%', paddingLeft: '5%'}}>
                   <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <ArtistsTable artistsData={sendData3}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw' }} value="2">{!loading
-              ? <div style={{paddingTop:'25vh'}}>
+            <TabPanel sx={isMobile ? {padding: '2px', paddingTop: '10px'} : { paddingLeft: '10%', paddingRight: '10%'}} value="2">{!loading
+              ? <div style={{paddingTop:'10%', paddingLeft: '5%'}}>
                   <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <ArtistsTable artistsData={sendData2}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw' }} value="3">{!loading
-              ? <div style={{paddingTop:'25vh'}}>
+            <TabPanel sx={isMobile ? {padding: '2px', paddingTop: '10px'} : { paddingLeft: '10%', paddingRight: '10%'}} value="3">{!loading
+              ? <div style={{paddingTop:'10%', paddingLeft: '5%'}}>
                   <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <ArtistsTable artistsData={sendData1}/>

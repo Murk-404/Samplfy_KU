@@ -12,6 +12,8 @@ import { ref, onValue } from 'firebase/database'
 import { Bars } from 'react-loader-spinner'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import {Buffer} from 'buffer';
+import useWindowDimensions from '../../../hooks/window-dimensions'
+import { isMobile } from "react-device-detect";
 
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
@@ -41,7 +43,6 @@ const fetchServer = function(allData) {
   )
 }
 async function getToken(reqBody) {
-  console.log(reqBody.toString())
   const token = await fetch(
     'https://accounts.spotify.com/api/token',
     {
@@ -181,20 +182,20 @@ function TopTracks() {
                 <Tab sx={{ width: '33%' }} label="All Time" value="3" />
               </TabList>
             </Box>
-            <TabPanel sx={{ paddingLeft: '10vw' }} value="1">{!loading
-              ? <div style={{paddingTop:'25vh'}}>
+            <TabPanel sx={isMobile ? {padding: '2px', paddingTop: '10px'} : { paddingLeft: '10%', paddingRight: '10%'}} value="1">{!loading
+              ? <div style={{paddingTop:'10%', paddingLeft: '5%'}}>
                   <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <TracksTable tracksData={sendData3}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw' }} value="2">{!loading
-              ? <div style={{paddingTop:'25vh'}}>
+            <TabPanel sx={isMobile ? {padding: '2px', paddingTop: '10px'} : { paddingLeft: '10%', paddingRight: '10%'}} value="2">{!loading
+              ? <div style={{paddingTop:'10%', paddingLeft: '5%'}}>
                   <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <TracksTable tracksData={sendData2}/>
             }</TabPanel>
-            <TabPanel sx={{ paddingLeft: '10vw' }} value="3">{!loading
-              ? <div style={{paddingTop:'25vh'}}>
+            <TabPanel sx={isMobile ? {padding: '2px', paddingTop: '10px'} : { paddingLeft: '10%', paddingRight: '10%'}} value="3">{!loading
+              ? <div style={{paddingTop:'10%', paddingLeft: '5%'}}>
                   <Bars type="ThreeDots" color="#2BAD60" height="200" width="90%"/>
                 </div>
               : <TracksTable tracksData={sendData1}/>
